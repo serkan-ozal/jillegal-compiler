@@ -7,8 +7,12 @@
 
 package tr.com.serkanozal.jillegal.compiler.initializer;
 
+import org.apache.log4j.Logger;
+
 public class CompilerInitializer {
 
+	private static final Logger logger = Logger.getLogger(CompilerInitializer.class);
+	
 	private static volatile boolean initialized = false;
 	
 	private CompilerInitializer() {
@@ -19,6 +23,7 @@ public class CompilerInitializer {
 		if (initialized == false) {
 			// Initialize if needed
 			initialized = true;
+			logger.info("Jillegal-Compile module has been initialized ...");
 		}
 	}
 	
