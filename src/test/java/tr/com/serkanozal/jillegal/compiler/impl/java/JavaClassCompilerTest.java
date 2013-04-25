@@ -24,7 +24,7 @@ public class JavaClassCompilerTest {
 	@Test
 	public void compileValid() throws Exception {
 		String code = 
-			"package tr.com.serkanozal.jimco;"+ "\n" +
+			"package tr.com.serkanozal.jillegal.compiler;"+ "\n" +
 			"\n" +
 			"public class SampleJavaClass {" + "\n" +
 			"\n" +
@@ -35,7 +35,7 @@ public class JavaClassCompilerTest {
 			"}";
 
 		Class<?> compiledClass = classCompilerFactory.getClassCompiler(DefaultCodeType.JAVA).compile(code);
-		Assert.assertEquals("tr.com.serkanozal.jimco.SampleJavaClass", compiledClass.getName());
+		Assert.assertEquals("tr.com.serkanozal.jillegal.compiler.SampleJavaClass", compiledClass.getName());
 		
 		Object obj = compiledClass.newInstance();
 		Assert.assertEquals("I am SampleJavaClass", obj.toString());
@@ -44,7 +44,7 @@ public class JavaClassCompilerTest {
 	@Test(expected=ClassCompileException.class)
 	public void compileInvalid() throws Exception {
 		String code = 
-				"package tr.com.serkanozal.jimco;"+ "\n" +
+				"package tr.com.serkanozal.jillegal.compiler;"+ "\n" +
 				"\n" +
 				"public class SampleJavaClass {" + "\n" +
 				"\n" +

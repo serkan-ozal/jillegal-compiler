@@ -19,12 +19,12 @@ import tr.com.serkanozal.jillegal.compiler.factory.DefaultClassCompilerFactory;
 @SuppressWarnings("deprecation")
 public class GroovyClassCompilerTest {
 
-private ClassCompilerFactory classCompilerFactory = new DefaultClassCompilerFactory();
+	private ClassCompilerFactory classCompilerFactory = new DefaultClassCompilerFactory();
 	
 	@Test
 	public void compileValid() throws Exception {
 		String code = 
-			"package tr.com.serkanozal.jimco;"+ "\n" +
+			"package tr.com.serkanozal.jillegal.compiler;"+ "\n" +
 			"\n" +
 			"public class SampleGroovyClass {" + "\n" +
 			"\n" +
@@ -36,7 +36,7 @@ private ClassCompilerFactory classCompilerFactory = new DefaultClassCompilerFact
 			"}";
 
 		Class<?> compiledClass = classCompilerFactory.getClassCompiler(DefaultCodeType.GROOVY).compile(code);
-		Assert.assertEquals("tr.com.serkanozal.jimco.SampleGroovyClass", compiledClass.getName());
+		Assert.assertEquals("tr.com.serkanozal.jillegal.compiler.SampleGroovyClass", compiledClass.getName());
 		
 		Object obj = compiledClass.newInstance();
 		Assert.assertEquals("I am SampleGroovyClass", obj.toString());
@@ -45,7 +45,7 @@ private ClassCompilerFactory classCompilerFactory = new DefaultClassCompilerFact
 	@Test(expected=ClassCompileException.class)
 	public void compileInvalid() throws Exception {
 		String code = 
-				"package tr.com.serkanozal.jimco;"+ "\n" +
+				"package tr.com.serkanozal.jillegal.compiler;"+ "\n" +
 				"\n" +
 				"public class SampleGroovyClass {" + "\n" +
 				"\n" +
