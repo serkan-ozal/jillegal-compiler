@@ -14,12 +14,12 @@ import org.junit.Test;
 import tr.com.serkanozal.jillegal.compiler.domain.model.DefaultCodeType;
 import tr.com.serkanozal.jillegal.compiler.exception.ClassCompileException;
 import tr.com.serkanozal.jillegal.compiler.factory.ClassCompilerFactory;
-import tr.com.serkanozal.jillegal.compiler.factory.DefaultClassCompilerFactory;
+import tr.com.serkanozal.jillegal.compiler.factory.ClassCompilerFactoryProvider;
 
 @SuppressWarnings("deprecation")
 public class GroovyClassCompilerTest {
 
-	private ClassCompilerFactory classCompilerFactory = new DefaultClassCompilerFactory();
+	private ClassCompilerFactory classCompilerFactory = ClassCompilerFactoryProvider.getClassCompilerFactory();
 	
 	@Test
 	public void compileValid() throws Exception {
